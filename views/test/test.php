@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
 </head>
 <body>
-<div>
-    <p><?php echo $p; ?></p>
-</div>
-
+<?php foreach($allImages as $images): ?>
+<p><img src="<?php echo $images['linkfull'] ; ?>"></p>
+<p><?php echo $images['date'] ; ?></p>
+    <p><img src="<?php echo $images['linkthumb'] ; ?>"></p>
+<p><?php echo $images['likes'] ; ?></p>
+<p><?php echo $images['views'] ; ?></p>
+<p><?php echo  $images['category']; ?></p>
+<?php endforeach; ?>
 </body>
 </html>

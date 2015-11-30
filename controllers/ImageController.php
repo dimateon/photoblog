@@ -1,6 +1,6 @@
 <?php
 require_once ROOT.'/models/Image/Image.php';
-require_once ROOT.'/models/Image/thumbnails.php';
+
 require_once ROOT.'/models/Image/categoryBihavior.php';
 require_once ROOT.'/models/Image/fullSize.php';
 require_once ROOT.'/models/Image/photoCategory.php';
@@ -11,9 +11,23 @@ class ImageController
     {
 
         if(isset($_POST['submit']) && isset($_FILES['image'])) {
-            $image = $_FILES['image'];
+            $image =  $_FILES['image'];
+            print_r($_FILES['image']);
+            if($image['error'] > 0) {
+                echo "Вы не выбрали файл";
+                exit();
+
+            }
+
+
+
+            $user_id = "sett";
 
             $category = $_POST['category'];
+
+            $path = Image::prepareSave($user_id, $category);
+
+
 
 
             if(Image::checkType($image))
@@ -22,7 +36,21 @@ class ImageController
             } else
             {
                 echo "Файл не соответсвует!<br />";
+
             }
+            /*try {
+                Image::checkType($image);
+                throw new Exception("Файл не соответсвует!");
+            } catch(Exception $e) {
+                echo $e->getMessage();
+            }
+            try {
+                Image::checkSize($image);
+                throw new Exception('Файл слишком большой');
+
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }*/
 
             if(Image::checkSize($image))
             {
@@ -31,27 +59,38 @@ class ImageController
             } else {
                 echo "Файл слишком большой<br />";
 
+
             }
+
             if(Image::checkImageResolution($image)) {
 
             } else {
                 echo "Разрешение - false";
             }
 
-            $thumb = new thumbnails($category);
-            echo "<br />";
-            $thumb->performCatecory();
-            echo "<br />";
-            $thumb->save();
-            echo "<br />";
+           /* try {
+                Image::checkImageResolution($image);
+                throw new Exception('Разрешение не соответсвует!');
+
+            }catch (Exception $e) {
+                echo $e->getMessage();
+            }*/
+
+
 
 
             $full = new fullSize($category);
             echo "<br />";
-            $full->performCatecory();
+            $full->performCategory();
             echo "<br />";
-            $full->save();
+            $full->save($path, $image);
             echo "<br />";
+            /*$thumb = new thumbnails($category);
+            echo "<br />";
+            $thumb->performCategory();
+            echo "<br />";
+            $thumb->save($path, $image);
+            echo "<br />";*/
 
 
 
@@ -61,6 +100,13 @@ class ImageController
 
         include_once ROOT."/views/upload_image/index.php";
         return true;
+    }
+
+
+    public function actionView()
+    {
+
+
     }
 }
 

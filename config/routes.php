@@ -1,8 +1,8 @@
 <?php
 return array(
 
-    'thumb'  => "thumb/index",
-    'full'   => 'full/index',
+    'thumb'  => "thumb/index/$1",
+    'view'   => 'view/index',
 
      'upload' => "image/index",
 

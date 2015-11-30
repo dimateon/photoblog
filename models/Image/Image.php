@@ -8,6 +8,7 @@
  */
 abstract class Image
 {
+
     protected $categoryBihavior;
     protected $tmp;
     protected $imageSize;
@@ -17,7 +18,7 @@ abstract class Image
 
 
 
-    public function performCatecory()
+    public function performCategory()
     {
         $this->categoryBihavior->category();
 
@@ -68,7 +69,24 @@ abstract class Image
 
     }
 
-    abstract public function save();
+    public static function prepareSave($user_id, $category) {
+
+        $galleryPath = '/uploads/';
+        $photo_save = $_FILES['image']['tmp_name'];
+        $name = md5($photo_save);
+        $dir = substr(md5(microtime()), mt_rand(0, 30), 2) . '/' . substr(md5(microtime()), mt_rand(0, 30), 2);
+        $folder_path = ROOT . $galleryPath . $user_id . '/' . $category . '/' . $dir ;
+        if (!is_dir($folder_path)){
+        mkdir($folder_path, 0777, true);
+        }
+        $path =  $galleryPath . $user_id . '/' . $category . '/' . $dir ;
+        echo $folder_path;
+
+        return $path;
+
+    }
+
+    abstract public function save($path, $image);
 
 
 
