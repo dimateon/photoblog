@@ -26,8 +26,8 @@ class fullSize extends Image
         $full->clear();
         $full->destroy();
         $linkFull = $pathFullSize.'full'.$image['name'];
-        $id_user = 1; // отладка
-        $category = 'fs'; // отладка
+        $id_user = $_SESSION['user'];
+        $category = $_POST['category'];
 
         $thumb = new Imagick();
         $thumb->readImage(ROOT.$pathFullSize.$image['name']);    $thumb->resizeImage(320, 240, Imagick::FILTER_LANCZOS,1);

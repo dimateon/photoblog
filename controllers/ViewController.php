@@ -2,6 +2,7 @@
 
 class ViewController
 {
+    protected $actionIndex;
     public function actionIndex()
     {
         $allImages = array();

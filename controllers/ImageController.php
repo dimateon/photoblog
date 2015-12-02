@@ -7,6 +7,7 @@ require_once ROOT.'/models/Image/photoCategory.php';
 require_once ROOT.'/models/Image/worldCategory.php';
 class ImageController
 {
+    protected $actionIndex;
     static public function actionIndex()
     {
 
@@ -21,62 +22,58 @@ class ImageController
 
 
 
-            $user_id = "sett";
+            $user_id = $_SESSION['user'];
+            if(isset($_POST['category'])) {
 
-            $category = $_POST['category'];
-
-            $path = Image::prepareSave($user_id, $category);
-
-
+                $category = $_POST['category'];
+            } else { echo "Категорий не выбрана"; exit();}
 
 
-            if(Image::checkType($image))
-            {
 
-            } else
-            {
-                echo "Файл не соответсвует!<br />";
 
-            }
-            /*try {
-                Image::checkType($image);
+
+        try {
+            Image::checkType($image);
+            Image::checkSize($image);
+            Image::checkImageResolution($image);
+            $directory = Image::checkDirectory();
+            $path = Image::prepareSave($user_id, $category, $directory);
+
+
+            $full = new fullSize($category);
+            echo "<br />";
+            $full->save($path, $image);
+            echo "<br />";
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+         /*
+            try {
+                if(!Image::checkType($image))
                 throw new Exception("Файл не соответсвует!");
             } catch(Exception $e) {
                 echo $e->getMessage();
+                exit();
             }
             try {
-                Image::checkSize($image);
+                if(!Image::checkSize($image))
                 throw new Exception('Файл слишком большой');
 
             } catch (Exception $e) {
                 echo $e->getMessage();
-            }*/
-
-            if(Image::checkSize($image))
-            {
-
-
-            } else {
-                echo "Файл слишком большой<br />";
-
-
+                exit();
             }
 
-            if(Image::checkImageResolution($image)) {
 
-            } else {
-                echo "Разрешение - false";
-            }
-
-           /* try {
-                Image::checkImageResolution($image);
+            try {
+                if(!Image::checkImageResolution($image))
                 throw new Exception('Разрешение не соответсвует!');
 
             }catch (Exception $e) {
                 echo $e->getMessage();
-            }*/
-
-
+                exit();
+            }
 
 
             $full = new fullSize($category);
@@ -85,14 +82,7 @@ class ImageController
             echo "<br />";
             $full->save($path, $image);
             echo "<br />";
-            /*$thumb = new thumbnails($category);
-            echo "<br />";
-            $thumb->performCategory();
-            echo "<br />";
-            $thumb->save($path, $image);
-            echo "<br />";*/
-
-
+         */
 
         }
 

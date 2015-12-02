@@ -1,5 +1,5 @@
 <?php
-
+include_once ROOT.'/controllers/MainController.php';
 /**
  * Класс Router
  * Компонент для работы с маршрутами
@@ -64,6 +64,7 @@ class Router
 
                 $parameters = $segments;
 
+
                 // Подключить файл класса-контроллера
                 $controllerFile = ROOT . '/controllers/' .
                     $controllerName . '.php';
@@ -75,17 +76,35 @@ class Router
                 // Создать объект, вызвать метод (т.е. action)
                 $controllerObject = new $controllerName;
 
+
                 /* Вызываем необходимый метод ($actionName) у определенного
                  * класса ($controllerObject) с заданными ($parameters) параметрами
                  */
 
-                $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+                if(property_exists($controllerName, $actionName)) {
+                    $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+
+                    if ($result != null) {
+                        break;
+                    }
+                } else {
+                    echo "Страница не существует";
+                    break;
+                }
+               /* $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+
+                if ($result != null)
+                    break;*/
+
+
+
+
+
+
 
 
                 // Если метод контроллера успешно вызван, завершаем работу роутера
-                if ($result != null) {
-                    break;
-                }
+
             }
         }
     }

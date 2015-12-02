@@ -18,11 +18,7 @@ abstract class Image
 
 
 
-    public function performCategory()
-    {
-        $this->categoryBihavior->category();
 
-    }
     public static function checkType($image) {
 
         $tmp = $image['tmp_name'];
@@ -34,7 +30,7 @@ abstract class Image
         {
             return true;
         }
-        return false;
+        throw new Exception("Неверный тип файла");
     }
 
     public static function checkSize($image)
@@ -60,16 +56,19 @@ abstract class Image
         if($imagesize[0] > 1000 && $imagesize > 600){
             return true;
         }
-        return false;
+        throw new Exception("Слишком низкое разрешение изображения");
     }
 
-    public function setCategoryBihavior(CategoryBihavior $category ) {
 
-        $this->categoryBihavior = $category;
-
+    public static function checkDirectory() {
+        if($_POST['directory_name'] != '') {
+            $directory = $_POST['directory_name'];
+            return $directory;
+        } else
+            throw new Exception('Директория не выбрана');
     }
 
-    public static function prepareSave($user_id, $category) {
+    public static function prepareSave($user_id, $category, $directory) {
 
         $galleryPath = '/uploads/';
         $photo_save = $_FILES['image']['tmp_name'];
@@ -80,7 +79,7 @@ abstract class Image
         mkdir($folder_path, 0777, true);
         }
         $path =  $galleryPath . $user_id . '/' . $category . '/' . $dir ;
-        echo $folder_path;
+
 
         return $path;
 

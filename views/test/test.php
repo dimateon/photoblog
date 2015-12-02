@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php foreach($allImages as $images): ?>
-<p><img src="<?php echo $images['linkfull'] ; ?>"></p>
+<p><img src="<?php echo $images['linkfull'] ; ?>" id="<?php echo $images['id']; ?>"></p>
 <p><?php echo $images['date'] ; ?></p>
     <p><img src="<?php echo $images['linkthumb'] ; ?>"></p>
 <p><?php echo $images['likes'] ; ?></p>
