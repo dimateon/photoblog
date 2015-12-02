@@ -3,8 +3,8 @@
 <head>
     <title>Photo Blog</title>
     <meta charset="UTF-8">
-    <link href="templates/css/reset.css" rel="stylesheet">
-    <link href="templates/css/main.css" rel="stylesheet">
+    <link href="/templates/css/reset.css" rel="stylesheet">
+    <link href="/templates/css/main.css" rel="stylesheet">
 </head>
 <body>
 <div class="page_align">
