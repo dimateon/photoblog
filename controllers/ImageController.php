@@ -1,10 +1,9 @@
 <?php
 require_once ROOT.'/models/Image/Image.php';
-
-require_once ROOT.'/models/Image/categoryBihavior.php';
+require_once ROOT.'/models/Image/getCategory.php';
+require_once ROOT . '/models/Image/categoryBehavior.php';
 require_once ROOT.'/models/Image/fullSize.php';
-require_once ROOT.'/models/Image/photoCategory.php';
-require_once ROOT.'/models/Image/worldCategory.php';
+
 class ImageController
 {
     protected $actionIndex;
@@ -36,8 +35,8 @@ class ImageController
             Image::checkType($image);
             Image::checkSize($image);
             Image::checkImageResolution($image);
-            $directory = Image::checkDirectory();
-            $path = Image::prepareSave($user_id, $category, $directory);
+
+            $path = Image::prepareSave($user_id, $category);
 
 
             $full = new fullSize($category);
@@ -87,7 +86,8 @@ class ImageController
         }
 
 
-
+        $allCategory = array();
+        $allCategory = getCategory::category();
         include_once ROOT."/views/upload_image/index.php";
         return true;
     }

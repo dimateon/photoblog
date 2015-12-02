@@ -12,8 +12,8 @@
         <a href="#" id="qwerty"></a>
         <div class="nav_bar">
             <ul><!--
-                 --><li><a href="#">Home</a></li><!--
-                 --><li><a href="#">Gallery</a></li><!--
+                 --><li><a href="/">Home</a></li><!--
+                 --><li><a href="/gallery">Gallery</a></li><!--
                  --><li><a href="#">About</a></li><!--
                  --><li><a href="#" id="slidedown">Sign in</a>
                     <div id="login_form">

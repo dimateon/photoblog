@@ -6,7 +6,7 @@ return array(
     'login'  => 'user/login',
     'register' => 'user/register',
 
-    'thumb'  => "thumb/index/$1",
+    'gallery' => 'category/index',
     'view'   => 'view/index',
 
      'upload' => "image/index",

@@ -1,20 +1,21 @@
 <?php require_once ROOT.'/templates/header.php'; ?>
 
 <div class="slider">
-    <!--  <div class="slider_nav"> -->
-
-    <!--    </div> -->
     <img  id="slider" src="../../templates/images/slider_one.png">
-    <ul class="myList" style = "border:  1px solid black">
+
+    <ul class="myList">
+
     </ul>
-    <a href="#" class="prev">prev</a>
-    <a href="#" class="next">next</a>
+
+    <a href="javascript://" class="prev">&lt</a>
+    <a href="javascript://" class="next">&gt</a>
+
 </div>
 <div class="some_text">
     <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.</h1>
 </div>
 <div id="go_gallery">
-    <a href="#">Go to GALLERY</a><p><?php echo $_SESSION['user']; ?></p>
+    <a href="javascript://">Go to GALLERY</a>
 </div>
 <?php require_once ROOT.'/templates/footer.php'; ?>

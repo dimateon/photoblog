@@ -9,8 +9,8 @@
 abstract class Image
 {
 
-    protected $categoryBihavior;
-    protected $tmp;
+    protected $categoryBehavior;
+
     protected $imageSize;
     protected $image;
     protected $image_type;
@@ -60,15 +60,14 @@ abstract class Image
     }
 
 
-    public static function checkDirectory() {
-        if($_POST['directory_name'] != '') {
-            $directory = $_POST['directory_name'];
-            return $directory;
-        } else
-            throw new Exception('Директория не выбрана');
+
+
+    public  function getCategory() {
+        $this->categoryBehavior->category();
+
     }
 
-    public static function prepareSave($user_id, $category, $directory) {
+    public static function prepareSave($user_id, $category) {
 
         $galleryPath = '/uploads/';
         $photo_save = $_FILES['image']['tmp_name'];
@@ -85,7 +84,9 @@ abstract class Image
 
     }
 
+
     abstract public function save($path, $image);
+
 
 
 

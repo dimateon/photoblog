@@ -1,7 +1,7 @@
 <?php
 
 require_once ROOT.'/models/Admin/Admin.php';
-
+require_once ROOT.'/models/Image/getCategory.php';
 class AdminController extends  Admin
 {
     protected $actionIndex;
@@ -15,13 +15,16 @@ class AdminController extends  Admin
 
                         $category_name = $_POST['category_name'];
                         echo $category_name;
-                        $description = $_POST['description'];
-                        echo $description;
+                        $thumbCategory = $_FILES['background']['tmp_name'];
+
 
                         $hidden = $_POST['hidden'];
                         echo $hidden;
 
-                        Admin::addCategory($category_name, $description, $hidden);
+
+                        Admin::addCategory($category_name, $thumbCategory, $hidden);
+
+
                     }
 
                     include_once ROOT.'/views/admin/panel.php';

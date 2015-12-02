@@ -1,4 +1,5 @@
 <?php
+require_once ROOT.'/models/Image/categoryBehavior.php';
 
 class ViewController
 {
