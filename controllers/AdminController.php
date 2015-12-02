@@ -15,7 +15,8 @@ class AdminController extends  Admin
 
                         $category_name = $_POST['category_name'];
                         echo $category_name;
-                        $thumbCategory = $_FILES['background']['tmp_name'];
+                        $thumbCategory = $_FILES['background'];
+                        print_r($thumbCategory);
 
 
                         $hidden = $_POST['hidden'];

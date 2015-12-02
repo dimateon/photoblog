@@ -11,20 +11,21 @@ abstract class Admin
     protected static function addCategory($category_name, $thumbCategory, $hidden)
     {
         $galleryPath = '/uploads/';
-
-        $path = $galleryPath . $category_name . '/' . $thumbCategory['name'];
-        if (!is_dir($$path)) {
-            mkdir($$path, 0777, true);
-            move_uploaded_file($thumbCategory['tmp_name'], ROOT . $path . $thumbCategory['name']);
+        $thumb_img = $_FILES['background'];
+        $thumbCategory = $_FILES['background'];
+        $path = $galleryPath . $category_name . '/' .$thumb_img['name'];
+        if (!is_dir(ROOT .$path)) {
+            mkdir(ROOT .$path, 0777, true);
+            move_uploaded_file($thumbCategory['tmp_name'], ROOT . $path . $thumb_img['name']);
 
             $thumb = new Imagick();
-            $thumb->readImage(ROOT . $path . $thumbCategory['name']);
+            $thumb->readImage(ROOT . $path . $thumb_img['name']);
             $thumb->resizeImage(320, 240, Imagick::FILTER_LANCZOS, 1);
-            $thumb->writeImage(ROOT . $path . 'thumb' . $thumbCategory['name']);
+            $thumb->writeImage(ROOT . $path . 'thumb' . $thumb_img['name']);
 
             $thumb->clear();
             $thumb->destroy();
-            $linkThumb = $path . 'thumb' . $thumbCategory['name'];
+            $linkThumb = $path . 'thumb' . $thumb_img['name'];
 
             $db = Db::getConnection();
 
