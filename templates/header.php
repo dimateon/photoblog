@@ -29,7 +29,7 @@
                             <input id="user_name" type="text" name="name" placeholder="Login">
                             <input id="user_password" type="email" name="email" placeholder="@mail">
                             <input id="user_password" type="password" name="password" placeholder="Password">
-                            <input type="submit" name="submit" class="" value="Sign up"/>
+                            <input type="submit" name="submit" id="reg" value="Sign up"/>
                         </form>
                     </div>
                 </li>
