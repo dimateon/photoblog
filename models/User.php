@@ -114,7 +114,7 @@ class User
     }
     public static function changeNav() {
         if(isset($_SESSION['user'])){
-       echo "<li><a href=\"/logout\" >Sign out</a>";
+       echo "<li><a href=\"/logout\" >Log out</a>";
     } else
         echo "<li><a href=\"#\" id=\"slidedown\">Sign in</a>";
     }
