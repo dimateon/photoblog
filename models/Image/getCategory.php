@@ -7,7 +7,7 @@ class getCategory implements  categoryBehavior
 
         $db = Db::getConnection();
 
-        $sql = 'SELECT category_name, thumbCategory FROM category '
+        $sql = 'SELECT * FROM category '
                 .'ORDER BY category_name';
 
         $result = $db->prepare($sql);
@@ -19,6 +19,8 @@ class getCategory implements  categoryBehavior
         while ($row = $result->fetch()) {
             $allCategory[$i]['category_name'] = $row['category_name'];
             $allCategory[$i]['thumbCategory'] = $row['thumbCategory'];
+            $allCategory[$i]['id'] = $row['id'];
+            $allCategory[$i]['hidden'] = $row['hidden'];
             $i++;
         }
         return $allCategory;

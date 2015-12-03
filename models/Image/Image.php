@@ -74,6 +74,7 @@ abstract class Image
         $name = md5($photo_save);
         $dir = substr(md5(microtime()), mt_rand(0, 30), 2) . '/' . substr(md5(microtime()), mt_rand(0, 30), 2);
         $folder_path = ROOT . $galleryPath . $user_id . '/' . $category . '/' . $dir ;
+        echo $folder_path;
         if (!is_dir($folder_path)){
         mkdir($folder_path, 0777, true);
         }
@@ -87,6 +88,23 @@ abstract class Image
 
     abstract public function save($path, $image);
 
+    public static function viewBehavior($result)
+    {
+
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $returnParams[$i]['id'] = $row['id'];
+            $returnParams[$i]['linkfull'] = $row['linkfull'];
+            $returnParams[$i]['linkthumb'] = $row['linkthumb'];
+            $returnParams[$i]['category'] = $row['category'];
+            $returnParams[$i]['id_user'] = $row['id_user'];
+            $returnParams[$i]['likes'] = $row['likes'];
+            $returnParams[$i]['date'] = $row['date'];
+            $returnParams[$i]['views'] = $row['views'];
+            $i++;
+        }
+        return $returnParams;
+    }
 
 
 

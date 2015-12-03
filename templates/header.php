@@ -15,7 +15,7 @@
                  --><li><a href="/">Home</a></li><!--
                  --><li><a href="/gallery">Gallery</a></li><!--
                  --><li><a href="#">About</a></li><!--
-                 --><li><a href="#" id="slidedown">Sign in</a>
+                 --><?php echo User::changeNav(); ?>
                     <div id="login_form">
                         <form method="post" action="/login">
                             <input id="user_name" type="text" placeholder="Login" name="email">

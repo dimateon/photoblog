@@ -32,6 +32,7 @@ class fullSize extends Image
         $thumb->destroy();
         $linkThumb = $pathFullSize.'thumb'.$image['name'];
 
+
         $db = Db::getConnection();
 
 

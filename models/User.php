@@ -107,9 +107,16 @@ class User
 
         if (isset($_SESSION['user'])){
             return $_SESSION['user'];
+
         }
-        header("Location: /user/login");
+
         return true;
+    }
+    public static function changeNav() {
+        if(isset($_SESSION['user'])){
+       echo "<li><a href=\"/logout\" >Sign out</a>";
+    } else
+        echo "<li><a href=\"#\" id=\"slidedown\">Sign in</a>";
     }
     public static function checkAdmin($user_date) {
         if(self::checkLogged())

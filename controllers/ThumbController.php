@@ -1,10 +1,17 @@
 <?php
 
+require_once ROOT. '/models/Image/viewThumbs.php';
+
 class ThumbController
 {
-    public function actionIndex(){
+    protected $actionIndex;
+    public function actionIndex($id){
 
-        include_once ROOT.'/views/test/thumb.php';
+        $returnParams = array();
+        $returnParams = viewThumbs::view($id);
+
+
+        include_once ROOT.'/views/gallery/thumbs.php';
         return true;
     }
 }

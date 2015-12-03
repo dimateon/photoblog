@@ -16,6 +16,6 @@
         tempor incididunt ut labore et dolore magna aliqua.</h1>
 </div>
 <div id="go_gallery">
-    <a href="javascript://">Go to GALLERY</a>
+    <a href="/gallery">Go to GALLERY</a>
 </div>
 <?php require_once ROOT.'/templates/footer.php'; ?>
