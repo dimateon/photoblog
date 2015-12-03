@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+
     /*SLIDER MOTHERFUCKIER!!1*/
     /*Ширина одного слайда*/
     var w=$('#slider').width()/5;
