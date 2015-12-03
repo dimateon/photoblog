@@ -11,7 +11,7 @@ class AdminController extends  Admin
             try {
                 if(Admin::checkAdmin()){
 
-                    if($_POST['submit']){
+                    if(isset($_POST['submit'])){
 
                         $category_name = $_POST['category_name'];
                         echo $category_name;
