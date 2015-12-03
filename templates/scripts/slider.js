@@ -59,7 +59,7 @@ $(document).ready(function(){
                 $("#slide_" + (clix + 1)).addClass("active");
                 /*сдвигаем слайд до тех пор пока он не окажется последним*/
                 if (clix < clix_num) {
-                    $("#slider").animate({right: "+=" + w}, 500);
+                    $("#slider").animate({right: "+=" + w}, 1000);
                     clix = clix + 1;
                     clearInterval(timer);
                     timer = setInterval('$(".next").click()', 10000);
@@ -69,7 +69,7 @@ $(document).ready(function(){
                     clix = 0;
                     $(".nav_slide").removeClass("active");
                     $("#slide_0").addClass("active");
-                    $("#slider").animate({right: "0px"}, 0);
+                    $("#slider").animate({right: "0px"}, 1000);
                 }
         });
 
@@ -78,7 +78,7 @@ $(document).ready(function(){
         $(".nav_slide").removeClass("active");
         $("#slide_"+(clix-1)).addClass("active");
         if (clix > 0){
-        $("#slider").animate({right:"-=" +w}, 500);
+        $("#slider").animate({right:"-=" +w}, 1000);
             clix = clix-1;
             clearInterval(timer);
             timer = setInterval('$(".next").click()', 7000);
@@ -87,7 +87,7 @@ $(document).ready(function(){
             clix = clix_num;
             $(".nav_slide").removeClass("active");
             $("#slide_"+clix_num).addClass("active");
-            $("#slider").animate({right: slider_size-w}, 0);
+            $("#slider").animate({right: slider_size-w}, 1000);
         }
     });
 });

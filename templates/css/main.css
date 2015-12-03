@@ -149,13 +149,11 @@ input{
 .slider{
     position: relative;
     width: 80%;
-/*    max-width: 9600px;
-    max-height: 1080px;*/
     height: 50%;
     top: 10%;
     margin: 0 auto;
-/*    text-align: center;*/
     overflow: hidden;
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.5);
 }
 .slider p{
     color: #fff;
@@ -274,7 +272,7 @@ input{
 .category img{
     width: 100%;
     height: 100%;
-    box-shadow: 2px 1px 1px 2px rgba(255, 255, 255, 0.4);
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.4);
 }
 #category li{
     display: inline-block;
