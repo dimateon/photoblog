@@ -17,5 +17,19 @@ class Counter extends Database
 
       $result->execute();
      }
+    public  static  function showCounter($id) {
+        $id = intval($id);
+        if ($id) {
+
+            $db = Db::getConnection();
+
+            $sql = 'SELECT views FROM Images WHERE id = :id';
+            $result = $db->prepare($sql);
+            $result->bindParam(":id", $id, PDO::PARAM_INT);
+            $result->execute();
+            $likes = $result->fetch();
+            return $likes;
+        }
+    }
 
 }

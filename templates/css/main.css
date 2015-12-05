@@ -510,7 +510,7 @@ input{
     display: block;
 }
 
-#likes{
+.likes{
     position: relative;
     width: 10%;
     color: #000;
@@ -524,7 +524,7 @@ input{
     bottom: 40px;
     left: 10%;
 }
-#views{
+.views{
     position: relative;
     width: 10%;
     color: #000;
