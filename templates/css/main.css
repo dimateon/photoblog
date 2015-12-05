@@ -514,7 +514,7 @@ input{
     bottom: 40px;
     left: 10%;
 }
-#views{
+.views{
     position: relative;
     width: 10%;
     color: #000;

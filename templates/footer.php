@@ -9,6 +9,7 @@
 <script src="/templates/scripts/modal.js"></script>
 <script src="/templates/scripts/reg_form.js"></script>
 <script src="/templates/scripts/slider.js"></script>
-
+<script src="/templates/scripts/likes.js"></script>
+<script src="/templates/scripts/modal_views.js"></script>
 </body>
 </html>
