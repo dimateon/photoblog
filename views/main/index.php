@@ -3,7 +3,7 @@
 
 
 <div class="slider">
-    <img  id="slider" src="../../templates/images/slider_one.png">
+    <img  id="slider" src="../../templates/images/slider_one.png" alt="123211231322133" onload="imgLoaded(this)">
 
     <ul class="myList">
 
