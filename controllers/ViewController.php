@@ -2,6 +2,7 @@
 require_once ROOT.'/models/Image/categoryBehavior.php';
 require_once ROOT.'/models/Image/viewFull.php';
 
+
 class ViewController
 {
     protected $actionIndex;

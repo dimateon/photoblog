@@ -3,9 +3,12 @@
 <head>
     <title>Photo Blog</title>
     <meta charset="UTF-8">
+    <script src="/templates/scripts/jquery-2.1.4.js"></script>
+
+    <script src="/templates/test/js/bootstrap.js" type="text/javascript"></script>
     <link href="/templates/css/reset.css" rel="stylesheet">
     <link href="/templates/css/main.css" rel="stylesheet">
-    <script src="/templates/scripts/jquery-2.1.4.js"></script>
+
 </head>
 <body>
 <div class="page_align">

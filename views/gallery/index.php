@@ -7,4 +7,6 @@
             </li>
         <?php endforeach; ?>
     </ul>
+
+
 <?php require_once ROOT.'/templates/footer.php'; ?>
