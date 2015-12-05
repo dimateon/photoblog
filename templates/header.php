@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link href="/templates/css/reset.css" rel="stylesheet">
     <link href="/templates/css/main.css" rel="stylesheet">
+    <script src="/templates/scripts/jquery-2.1.4.js"></script>
 </head>
 <body>
 <div class="page_align">

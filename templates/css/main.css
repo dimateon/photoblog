@@ -143,8 +143,9 @@ input{
 .content{
     width: 100%;
     height: 70%;
-    background: linear-gradient(to top, #e9e5dc, #211d17);
-    background-color: gray;
+/*    background: linear-gradient(to top, #e9e5dc, #211d17);*/
+    background-color: #e9e5dc
+/*    background-color: gray;*/
 }
 .slider{
     position: relative;
@@ -260,7 +261,7 @@ input{
 }
 .footer p{
     display: inline-block;
-    margin-top: 2%;
+    margin-top: 0.5%;
     margin-left: 15%;
 }
 #category{
@@ -272,20 +273,60 @@ input{
 .category img{
     width: 100%;
     height: 100%;
-    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.4);
+/*    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.4);*/
 }
 #category li{
     display: inline-block;
     width: 28%;
     height: 28%;
-    padding-top: 2%;
+    padding-top: 1%;
     padding-bottom: 2%;
     padding-left: 2%;
     padding-right: 2%;
     text-align: center;
     color: #367b54;
-
 }
 #category p{
-    padding-bottom: 2%;
+/*    padding-bottom: 2%;*/
 }
+.photo_info{
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: #e9e5dc;
+/*    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;*/
+
+}
+#like_png{
+    position: relative;
+    width: 10%;
+    height: 100%;
+    right: 30%;
+    bottom: 10%;
+}
+#likes{
+    position: relative;
+    width: 10%;
+    color: #000;
+    left: 30%;
+    bottom: 100%;
+}
+#view_png{
+    position: relative;
+    width: 10%;
+    height: 100%;
+    bottom: 40px;
+    left: 10%;
+}
+#views{
+    position: relative;
+    width: 10%;
+    color: #000;
+    left: 70%;
+    bottom: 300%;
+}
+
+
