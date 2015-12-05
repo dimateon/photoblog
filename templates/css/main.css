@@ -500,7 +500,7 @@ input{
 .catActive {
     display: block;
 }
-#likes{
+.likes{
     position: relative;
     width: 10%;
     color: #000;
